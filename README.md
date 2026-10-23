@@ -121,7 +121,7 @@ Customer-Segmentation-Kmeans-dbscan-clustering/
 - Packages (pinned in `requirements.txt`): pandas 3.0.3, numpy 2.2.6, scikit-learn 1.9.0, matplotlib 3.11.0, seaborn 0.13.2, scipy 1.18.0, joblib 1.5.3, Jupyter stack
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 jupyter notebook notebooks/ds_workflow.ipynb   # run top-to-bottom
 ```
 
