@@ -13,7 +13,7 @@
 
 **Author:** **MD. Sakib Al Hasan** · Data Science Portfolio Project · **[Live demo](https://customer-segmentation-kmeans-dbscan-clustering.streamlit.app/)**
 
-This project applies the full unsupervised workflow to the classic **Credit Card Dataset for Clustering**: clean 3.5% missing values, log-transform 12 skewed features, standardize all 15 columns, then compare K-Means against Hierarchical and DBSCAN (PCA is used to check dimensionality and to visualize the clusters). The winner, **K-Means with k=2**, splits the portfolio into two clearly readable groups — 60% purchase-active customers and 40% who lean heavily on cash advances and carry large balances.
+This project applies the full unsupervised workflow to the classic **Credit Card Dataset for Clustering**: clean 3.5% missing values, log-transform 12 skewed features, standardize all 15 columns, then compare K-Means against Hierarchical and DBSCAN (PCA is used to check dimensionality and to visualize the clusters). The winner, **K-Means with k=2**, splits the portfolio into two clearly readable groups — 60.4% purchase-active customers and 39.6% who lean heavily on cash advances and carry large balances.
 
 ![1_cover_v3.png](visuals/1_cover_v3.png)
 
