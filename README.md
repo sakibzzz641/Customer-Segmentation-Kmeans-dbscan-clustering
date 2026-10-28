@@ -13,10 +13,9 @@
 
 **Author:** **MD. Sakib Al Hasan** · Data Science Portfolio Project · **[Live demo](https://customer-segmentation-kmeans-dbscan-clustering.streamlit.app/)**
 
-This project applies the full unsupervised workflow to the classic **Credit Card Dataset for Clustering**: clean 3.5% missing values, log-transform 12 skewed features, reduce 15 columns to 9 with PCA, then compare K-Means against Hierarchical and DBSCAN. The winner, **K-Means with k=2**, splits the portfolio into two clearly readable groups — 60% purchase-active customers and 40% who lean heavily on cash advances and carry large balances.
+This project applies the full unsupervised workflow to the classic **Credit Card Dataset for Clustering**: clean 3.5% missing values, log-transform 12 skewed features, standardize all 15 columns, then compare K-Means against Hierarchical and DBSCAN (PCA is used to check dimensionality and to visualize the clusters). The winner, **K-Means with k=2**, splits the portfolio into two clearly readable groups — 60% purchase-active customers and 40% who lean heavily on cash advances and carry large balances.
 
-
-![1_cover_v2.png](visuals/1_cover_v3.png)
+![1_cover_v3.png](visuals/1_cover_v3.png)
 
 
 ## Live Demo
@@ -56,7 +55,7 @@ Keeping both members of almost-identical pairs would have silently doubled the w
 
 **3. Skew handling.** Spending and balance data is heavily right-skewed — `MINIMUM_PAYMENTS` hit a skewness of **13.9** and `PURCHASES` **8.1**. Since distance-based clustering is sensitive to tails, the **12** most skewed columns (>1.0) were transformed with `log1p`. After the transform, skew on every transformed column dropped below ≈1.8 (most close to 0). Outliers were *not* deleted: a customer with a large cash advance is real behavior, not a typo.
 
-**4. Scaling & dimensionality.** All features standardized with `StandardScaler` (required for K-Means — columns range from ≈0.0 frequencies to thousands of dollars). PCA on the standardized data: **9 of 15 components capture 95% of the variance**, confirming the dimensionality is genuinely compact.
+**4. Scaling & dimensionality.** All features standardized with `StandardScaler` (required for K-Means — columns range from ≈0.0 frequencies to thousands of dollars). PCA on the standardized data: **9 of 15 components capture 95% of the variance**, confirming the dimensionality is genuinely compact. PCA is used here for analysis and for the 2D plots; the clustering itself runs on all 15 standardized features.
 
 **5. Choosing k.** K-Means ran for k = 2–10, scored with silhouette:
 
